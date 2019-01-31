@@ -36,7 +36,7 @@ LATEX = pdflatex -halt-on-error --output-dir=$(TMP)
 $(TMP)/kva.pdf: $(TEX) $(IMG) Makefile
 	$(LATEX) $< && $(LATEX) $<
 
-TODAY = $(shell date +%Y%m%d.pdf)
+TODAY = $(shell date +%Y%m%d)
 
 release: $(TMP)/kva_$(TODAY).pdf
 	git tag $(TODAY)
