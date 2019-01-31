@@ -33,5 +33,13 @@ TEX += bib/bib.tex
 
 LATEX = pdflatex -halt-on-error --output-dir=$(TMP)
 
-kva.pdf: $(TEX) $(IMG) Makefile
+$(TMP)/kva.pdf: $(TEX) $(IMG) Makefile
 	$(LATEX) $< && $(LATEX) $<
+
+TODAY = $(shell date +%Y%m%d.pdf)
+
+release: $(TMP)/kva_$(TODAY).pdf
+	git tag -b $(TODAY)
+
+$(TMP)/kva_$(TODAY).pdf: $(TMP)/kva.pdf
+	cp $< $@
