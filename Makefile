@@ -1,5 +1,15 @@
+MODULE ?= $(notdir $(CURDIR))
+CWD		= $(CURDIR)
+TMP		= $(CWD)/tmp
 
-LATEX = pdflatex
+TEX = $(MODULE).tex header.tex
 
-kva.pdf: $(TEX)
+IMG = img/logo63.png
+
+TEX += quantorium.tex 
+
+
+LATEX = pdflatex -halt-on-error --output-dir=$(TMP)
+
+kva.pdf: $(TEX) $(IMG) Makefile
 	$(LATEX) $< && $(LATEX) $<
