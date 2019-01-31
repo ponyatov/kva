@@ -8,6 +8,9 @@ IMG = img/logo63.png
 
 TEX += quantorium.tex 
 
+TEX += intro/intro.tex
+
+IMG += img/lego/loom.jpg img/lego/lathe.jpg img/lego/drill.jpg
 
 LATEX = pdflatex -halt-on-error --output-dir=$(TMP)
 
