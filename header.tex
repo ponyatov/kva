@@ -10,6 +10,10 @@
 \usepackage[paperwidth=118.8mm,paperheight=68.2mm,margin=2mm]{geometry}
 %% font setup for tiny screen reading
 \renewcommand{\familydefault}{\sfdefault}\normalfont
+%% fix heading styles for tiny paper
+\usepackage{titlesec}
+\titleformat{\chapter}{\Large\bfseries}{\thechapter.}{1em}{}
+\titleformat{\section}{\large\bfseries}{\thesection.}{1em}{}
 
 % graphics
 \usepackage[pdftex]{graphicx}
