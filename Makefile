@@ -39,7 +39,7 @@ $(TMP)/kva.pdf: $(TEX) $(IMG) Makefile
 TODAY = $(shell date +%Y%m%d.pdf)
 
 release: $(TMP)/kva_$(TODAY).pdf
-	git tag -b $(TODAY)
+	git tag $(TODAY)
 
 $(TMP)/kva_$(TODAY).pdf: $(TMP)/kva.pdf
 	cp $< $@
