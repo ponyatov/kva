@@ -8,3 +8,8 @@
 
 github: https://github.com/ponyatov/kva
 
+### Кванториум-63
+
+Самара, проспект Масленникова, 37
+ 
+https://vk.com/kvantorium63
