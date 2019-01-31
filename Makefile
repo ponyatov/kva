@@ -12,9 +12,21 @@ TEX += intro/intro.tex
 
 IMG += img/lego/loom.jpg img/lego/lathe.jpg img/lego/drill.jpg
 
-TEX += arduino/arduino.tex
+TEX += mcu/mcu.tex
 
 TEX += ci/ci.tex
+
+TEX += arduino/arduino.tex
+
+TEX += msp/msp.tex
+
+TEX += cortex/cortex.tex 
+
+TEX += linux/linux.tex
+
+TEX += iot/iot.tex
+
+TEX += fpga/fpga.tex
 
 TEX += bib/bib.tex
 
