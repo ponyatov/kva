@@ -12,6 +12,13 @@ TEX += intro/intro.tex
 
 IMG += img/lego/loom.jpg img/lego/lathe.jpg img/lego/drill.jpg
 
+TEX += arduino/arduino.tex
+
+TEX += ci/ci.tex
+
+TEX += bib/bib.tex
+
+
 LATEX = pdflatex -halt-on-error --output-dir=$(TMP)
 
 kva.pdf: $(TEX) $(IMG) Makefile
