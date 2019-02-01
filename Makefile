@@ -18,6 +18,10 @@ TEX += ci/ci.tex
 
 TEX += arduino/arduino.tex
 
+TEX += diy/diy.tex
+
+TEX += pcb/pcb.tex
+
 TEX += msp/msp.tex
 
 TEX += cortex/cortex.tex 
@@ -27,6 +31,11 @@ TEX += linux/linux.tex
 TEX += iot/iot.tex
 
 TEX += fpga/fpga.tex
+
+TEX += lib/lib.tex 
+
+TEX += lib/power/snubber/snubber.tex
+IMG += lib/power/snubber/snubber.png
 
 TEX += bib/bib.tex
 
