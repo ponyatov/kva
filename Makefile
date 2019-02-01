@@ -4,7 +4,7 @@ TMP		= $(CWD)/tmp
 
 TEX = $(MODULE).tex header.tex
 
-IMG = img/logo63.png
+IMG = $(TMP)/logo63.png
 
 TEX += quantorium.tex 
 
@@ -38,6 +38,8 @@ TEX += lib/power/snubber/snubber.tex
 IMG += lib/power/snubber/snubber.png
 
 TEX += bib/bib.tex
+IMG += bib/deitel.jpg bib/kernigan.jpg
+IMG += bib/gololob.jpg bib/bachinin.png bib/ermishin.jpg
 
 
 LATEX = pdflatex -halt-on-error --output-dir=$(TMP)
@@ -52,3 +54,6 @@ release: $(TMP)/kva_$(TODAY).pdf
 
 $(TMP)/kva_$(TODAY).pdf: $(TMP)/kva.pdf
 	cp $< $@
+
+$(TMP)/logo63.png: img/logo63.png Makefile
+	convert $< -resize 11% $@
