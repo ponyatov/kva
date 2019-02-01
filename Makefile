@@ -50,7 +50,7 @@ $(TMP)/kva.pdf: $(TEX) $(IMG) Makefile
 TODAY = $(shell date +%Y%m%d)
 
 release: $(TMP)/kva_$(TODAY).pdf
-	git tag $(TODAY)
+	git tag $(TODAY) && git push -v --tags
 
 pdf: $(TMP)/kva_$(TODAY).pdf
 
