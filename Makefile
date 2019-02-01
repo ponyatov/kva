@@ -52,8 +52,12 @@ TODAY = $(shell date +%Y%m%d)
 release: $(TMP)/kva_$(TODAY).pdf
 	git tag $(TODAY)
 
-$(TMP)/kva_$(TODAY).pdf: $(TMP)/kva.pdf
-	cp $< $@
+pdf: $(TMP)/kva_$(TODAY).pdf
+
+$(TMP)/kva_$(TODAY).pdf: $(TMP)/kva.pdf Makefile
+	ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$@ $<
+# prepress
+# ebook	
 
 $(TMP)/logo63.png: img/logo63.png Makefile
 	convert $< -resize 11% $@
