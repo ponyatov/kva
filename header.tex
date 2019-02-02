@@ -5,6 +5,12 @@
 %% fix first empty page
 \usepackage{atbegshi}
 \AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+%% define color system for paper print
+\usepackage{xcolor}
+\definecolor{red}{rgb}{0.7,0,0}		% R
+\definecolor{green}{rgb}{0,0.4,0}	% G
+\definecolor{blue}{rgb}{0,0,0.7}	% B
+\definecolor{magenta}{rgb}{0.7,0,0.7}	% magenta
 
 %% mobile phone optimized
 \usepackage[paperwidth=118.8mm,paperheight=68.2mm,margin=2mm]{geometry}

@@ -8,7 +8,7 @@ IMG = $(TMP)/logo63.png
 
 TEX += quantorium.tex 
 
-TEX += intro/intro.tex intro/open.tex
+TEX += intro/intro.tex intro/open.tex intro/linux.tex intro/ebook.tex
 IMG += img/OpenHardware.png img/CHBZ.png img/LinuxPowered.png 
 
 IMG += img/lego/loom.jpg img/lego/lathe.jpg img/lego/drill.jpg
