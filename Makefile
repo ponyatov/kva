@@ -2,13 +2,14 @@ MODULE ?= $(notdir $(CURDIR))
 CWD		= $(CURDIR)
 TMP		= $(CWD)/tmp
 
-TEX = $(MODULE).tex header.tex
+TEX = $(MODULE).tex header.tex version.tex
 
 IMG = $(TMP)/logo63.png
 
 TEX += quantorium.tex 
 
-TEX += intro/intro.tex
+TEX += intro/intro.tex intro/open.tex
+IMG += img/OpenHardware.png img/CHBZ.png img/LinuxPowered.png 
 
 IMG += img/lego/loom.jpg img/lego/lathe.jpg img/lego/drill.jpg
 
@@ -40,6 +41,7 @@ IMG += lib/power/snubber/snubber.png
 TEX += bib/bib.tex
 IMG += bib/deitel.jpg bib/kernigan.jpg
 IMG += bib/gololob.jpg bib/bachinin.png bib/ermishin.jpg
+IMG += bib/perelman1.jpg
 
 
 LATEX = pdflatex -halt-on-error --output-dir=$(TMP)
@@ -49,7 +51,10 @@ $(TMP)/kva.pdf: $(TEX) $(IMG) Makefile
 
 TODAY = $(shell date +%Y%m%d)
 
+HASH = $(shell git rev-parse --short HEAD)
+NOW  = $(shell date +%d.%m.%Y)
 release: $(TMP)/kva_$(TODAY).pdf
+	echo "\\date{версия $(HASH) $(NOW)\\\\\\\\ \\licence}" > version.tex
 	git tag $(TODAY) && git push -v --tags
 
 pdf: $(TMP)/kva_$(TODAY).pdf
