@@ -53,8 +53,9 @@ TODAY = $(shell date +%Y%m%d)
 
 HASH = $(shell git rev-parse --short HEAD)
 NOW  = $(shell date +%d.%m.%Y)
-release: $(TMP)/kva_$(TODAY).pdf
+release:
 	echo "\\date{версия $(HASH) $(NOW)\\\\\\\\ \\licence}" > version.tex
+	$(MAKE) $(TMP)/kva_$(TODAY).pdf
 	git tag $(TODAY) && git push -v --tags
 
 pdf: $(TMP)/kva_$(TODAY).pdf
